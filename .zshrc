@@ -177,6 +177,7 @@ function fzf-lovely(){
 	fi
 }
 
+# Extracción de puertos de un archivo de Nmap grepeable
 function extractPorts(){
     ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
     ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
