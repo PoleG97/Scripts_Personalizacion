@@ -4,8 +4,11 @@ Antes de nada descargar  la fuente "hack nerd font"
 
 Debemos tener en cuenta una serie de descargas previas
 
+
 A. Instalar ZSH
+
 B. Cambiar Zsh                                chsh -s $(which zsh)
+
 C. Instalar OhMyZsh                           sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
