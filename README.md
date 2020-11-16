@@ -4,16 +4,24 @@ Antes de nada descargar  la fuente "hack nerd font"
 
 Debemos tener en cuenta una serie de descargas previas
 
-(git) 1. Descargar powerlevel10k
+A. Instalar ZSH
+B. Cambiar Zsh                                chsh -s $(which zsh)
+C. Instalar OhMyZsh                           sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-(git) 2. Descargar lsd
 
-(git) 3. Descargar bat
 
-(git) 4. Descargar zsh-autosuggestion 
+(git) 1. Descargar lsd
 
-(git) 5. Descargar zsh-syntax-highlighting
+(git) 2. Descargar bat
 
-(git) 6. Descargar fzf
+(git) 3. Descargar zsh-autosuggestion 
+
+(git) 4. Descargar zsh-syntax-highlighting
+
+(git) 5. Descargar fzf
+
+(git) 6. Descargar powerlevel10k
+
+7. Cambiar en .zshrc el Tema de ZSH por powerlevel10k/powerlevel10k
 
 
