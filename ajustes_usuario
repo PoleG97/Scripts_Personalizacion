@@ -24,13 +24,13 @@ HISTFILE=~/.zsh_history
 [ -f ~/.fzf.zsh	] && source ~/.fzf.zsh
 
 # Alias
-alias ls='lsd --group-dirs=first'
-alias la='lsd -a --group-dirs=first'
 alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
-
-alias cat='bat --paging=never'
-alias catn='cat'
+alias ls='lsd --group-dirs=first'
+alias cat='batcat'
+alias vs='codium'
 
 # Plugins
 
@@ -91,5 +91,19 @@ function extractPorts(){
 function mkt(){
     mkdir {nmap, content, scripts, tmp, exploits}
 }
+
+# Conexión a HTB
+function htb_connect(){
+        cd /home/pole/Documentos
+        sudo openvpn lab_poleG.ovpn
+}
+ 
+# Abrir los ajustes del KDE
+function ajustes(){
+        cd /usr/share/applications
+        systemsettings5 > /dev/null 2>&1 &
+        disown
+}
+
 
 #<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>#
