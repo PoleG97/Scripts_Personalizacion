@@ -1,5 +1,17 @@
 #!/bin/bash
 
+### Quiero que me generes script en bash para automatizar mi despliegue de mi personalización en un entorno debian. Mi personalización requiere lo siguiente
+### 
+### - instalar en la fuente "hack nerd font"
+### - Preguntarme si tengo debian o arch
+### - Detectar el tipo de tipo el paquetes que puedo instalar en él "amd64", "arm64", "i686"... en mi sistema (teniendo en cuenta también si es arch o debian para saber que extensión de paquetes debe tener en cuenta)
+### - Con ello determinado, quiero que se descarguen los paquetes más recientes de los programas "lsd" (https://github.com/lsd-rs/lsd/releases) y "bat" (https://github.com/sharkdp/bat/releases)
+### - Instalar esos programas en el sistema teniedno en cuenta si he elegido arch o debian en los primeros pasos
+### - descargar zhs si es necesario
+### - cambiar la shell que esté por defecto a zsh 
+### - instalar ohmyposh
+
+
 # Función para instalar Hack Nerd Font
 function instalar_hack_nerd_font() {
   echo "Instalando Hack Nerd Font..."
