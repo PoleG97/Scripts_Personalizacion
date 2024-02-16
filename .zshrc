@@ -190,3 +190,23 @@ function extractPorts(){
 }
 
 #<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>#
+
+# Plugins
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-plugins/sudo.plugin.zsh
+
+# Alias
+alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias l='lsd --group-dirs=first'
+alias lla='lsd -lha --group-dirs=first'
+alias ls='lsd --group-dirs=first'
+alias cat='bat'
+alias catNonum='bat --style=plain'
+
+# Atajos
+alias lab='cd /mnt/d/Projects'
+alias tfg='cd /mnt/c/Users/jairo/OneDrive\ -\ unileon.es/TFG/Electronics'
+alias clase='cd /mnt/c/Users/jairo/OneDrive\ -\ unileon.es/'
+
