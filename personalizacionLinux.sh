@@ -60,6 +60,7 @@ function instalar_zsh() {
  echo "zsh instalado correctamente."
 }
 
+# Función para instalar ohmyposh
 function instalar_ohmyposh() {
   echo "Instalando Oh My Posh..."
 
@@ -94,6 +95,48 @@ function cambiar_shell_zsh() {
  echo "Shell por defecto cambiada a zsh correctamente."
 }
 
+# Función para instalar plugins de zsh
+function instalar_plugins_zsh() {
+  echo "Instalando plugins de zsh..."
+
+  # Instalar zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+  # Instalar zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+  # Instalar zsh-plugins
+  git clone https://github.com/zsh-users/zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-plugins
+
+  echo "Plugins de zsh instalados correctamente."
+}
+
+# Funcion para agregar texto a .zshrc
+function agregar_alias_configuracion_plugins() {
+  local zshrc_file="$HOME/.zshrc"
+    
+  # Agregar texto al archivo ~/.zshrc
+  echo "# Alias" >> "$zshrc_file"
+  echo "alias ll='lsd -lh --group-dirs=first'" >> "$zshrc_file"
+  echo "alias la='lsd -a --group-dirs=first'" >> "$zshrc_file"
+  echo "alias l='lsd --group-dirs=first'" >> "$zshrc_file"
+  echo "alias lla='lsd -lha --group-dirs=first'" >> "$zshrc_file"
+  echo "alias ls='lsd --group-dirs=first'" >> "$zshrc_file"
+  echo "alias cat='bat'" >> "$zshrc_file"
+  echo "alias catNonum='bat --style=plain'" >> "$zshrc_file"
+  
+  # Agregar ruta de plugins zsh al archivo ~/.zshrc si existe
+  if [ -d "$ZSH_CUSTOM/plugins" ]; then
+      echo "" >> "$zshrc_file"  # Añadir una línea en blanco antes de la ruta
+      echo "# Ruta de plugins de zsh" >> "$zshrc_file"
+      echo "export ZSH_CUSTOM_PLUGINS_PATH=\"$ZSH_CUSTOM/plugins\"" >> "$zshrc_file"
+  fi
+  
+  echo "Actualización completada en $zshrc_file"
+}
+
+##############################################################
+
 # Inicio del script
 
 # Preguntar si tiene Debian o Arch
@@ -119,6 +162,12 @@ instalar_zsh
 
 # Cambiar la shell por defecto a zsh
 cambiar_shell_zsh
+
+# Instalar plugins de zsh
+instalar_plugins_zsh
+
+# Meter alias y configuracion del zshrc
+agregar_alias_configuracion_plugins
 
 # Instalar ohmyposh
 instalar_ohmyposh
