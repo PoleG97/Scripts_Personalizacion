@@ -60,16 +60,32 @@ function instalar_zsh() {
  echo "zsh instalado correctamente."
 }
 
-# Función para instalar ohmyposh
 function instalar_ohmyposh() {
- echo "Instalando ohmyposh..."
- # Comandos para instalar ohmyposh
- # Ejemplo para Ubuntu:
- curl -Lo install.sh https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/scripts/install.sh
- chmod +x install.sh
- ./install.sh --unattended
- echo "ohmyposh instalado correctamente."
+  echo "Instalando Oh My Posh..."
+
+  # Obtener la variable $PATH del usuario
+  path_usuario=$PATH
+
+  # Encontrar el primer directorio en el que el usuario puede ejecutar archivos .sh
+  directorio_instalacion=$(echo $path_usuario | tr ':' '\n' | while read dir; do if [ -w "$dir" ]; then echo "$dir"; break; fi; done)
+
+  # Si no se encontró ningún directorio con permisos de escritura, usar el directorio home
+  if [ -z "$directorio_instalacion" ]; then
+    directorio_instalacion="$HOME"
+  fi
+
+  # Descargar e instalar Oh My Posh
+  curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$directorio_instalacion"
+
+  # Agregar la configuración de Oh My Posh al archivo .zshrc
+  echo 'eval "$(oh-my-posh init zsh)"' >> ~/.zshrc
+
+  # Reiniciar la shell zsh para que se apliquen los cambios
+  exec zsh
+
+  echo "Oh My Posh instalado correctamente."
 }
+
 
 # Función para cambiar la shell por defecto a zsh
 function cambiar_shell_zsh() {
