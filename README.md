@@ -27,4 +27,8 @@ C. Instalar OhMyZsh                           sh -c "$(curl -fsSL https://raw.gi
 
 7. Cambiar en .zshrc el Tema de ZSH por powerlevel10k/powerlevel10k
 
+NOTA :: Para cambiar el tema de OhMyPosh, añadir en el .zshrc la siguiente línea
+        eval "$(oh-my-posh init zsh --config ~/OhMyPosh_Themes/glowsticks.omp.yaml)"
+Donde irá la ruta de donde esté alojado el tema a instalar 
+
 
