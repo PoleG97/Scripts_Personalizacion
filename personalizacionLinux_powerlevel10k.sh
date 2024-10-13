@@ -178,4 +178,6 @@ instalar_plugins_zsh
 # Agregar alias y configuración al zshrc
 agregar_alias_configuracion_plugins
 
+exit
+
 echo "Personalización completada correctamente. Reinicia tu terminal para aplicar todos los cambios."
