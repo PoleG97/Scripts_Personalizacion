@@ -10,18 +10,9 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
-# Ajustes del PATH
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-
-# Solucion JAVA 
-export _JAVA_AWT_WM_NONREPARING=1
-
-# Savehistory
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-#fzf
-[ -f ~/.fzf.zsh	] && source ~/.fzf.zsh
+# Plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Alias
 alias ll='lsd -lh --group-dirs=first'
@@ -29,13 +20,9 @@ alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias cat='batcat'
-alias vs='codium'
+alias cat='bat'
+alias catNonum='bat --style=plain'
 
-# Plugins
-
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<># FUNCIONES
 
@@ -73,36 +60,6 @@ function fzf-lovely(){
 	                          rougify {} ||
 	                          cat {}) 2> /dev/null | head -500'
 	fi
-}
-
-# Extracción de puertos de un archivo de Nmap grepeable
-function extractPorts(){
-    ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-    ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-    echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-    echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-    echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-    echo $ports | tr -d '\n' | xclip -sel clip
-    echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-    cat extractPorts.tmp; rm extractPorts.tmp
-}
-
-# Crear las carpetas de trabajo
-function mkt(){
-    mkdir {nmap, content, scripts, tmp, exploits}
-}
-
-# Conexión a HTB
-function htb_connect(){
-        cd /home/pole/Documentos
-        sudo openvpn lab_poleG.ovpn
-}
- 
-# Abrir los ajustes del KDE
-function ajustes(){
-        cd /usr/share/applications
-        systemsettings5 > /dev/null 2>&1 &
-        disown
 }
 
 
