@@ -57,7 +57,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 
 # Agregar configuración al .zshrc desde el archivo externo
 echo "Agregando configuración al .zshrc desde archivo externo..."
-CONFIG_FILE="./zsh_config_content.txt"
+CONFIG_FILE="./ajustes_usuario.txt"
 if [ -f "$CONFIG_FILE" ]; then
     cat "$CONFIG_FILE" >> ~/.zshrc
 else
