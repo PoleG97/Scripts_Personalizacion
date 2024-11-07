@@ -48,38 +48,22 @@ echo "Instalando tema PowerLevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
-# TODO : Mejorar esta mierda de la descarga e instalación de LSD y BAT, es una basura, acabaré haciéndolo a mano porque esto petará
+# TODO : Mejorar esto, debe descargarse el programa aunque no esté en su apt
 # Descargar e instalar lsd
 echo "Instalando lsd..."
-if [[ "$ARCH" == "x86_64" ]]; then
-    LSD_URL="https://github.com/lsd-rs/lsd/releases/latest/download/lsd-0.23.1-x86_64-unknown-linux-musl.tar.gz"
-elif [[ "$ARCH" == "i686" ]]; then
-    LSD_URL="https://github.com/lsd-rs/lsd/releases/latest/download/lsd-0.23.1-i686-unknown-linux-musl.tar.gz"
-else
-    echo "Arquitectura no soportada para lsd."
-    exit 1
+if [ "$OS" == "debian" ]; then
+    sudo apt update && apt install lsd -y
+elif [ "$OS" == "arch" ]; then
+    pacman -S lsd
 fi
-LSD_TMP_DIR=$(mktemp -d)
-wget -qO "$LSD_TMP_DIR/lsd.tar.gz" "$LSD_URL"
-tar -xzf "$LSD_TMP_DIR/lsd.tar.gz" -C "$LSD_TMP_DIR"
-sudo mv "$LSD_TMP_DIR/lsd-0.23.1-x86_64-unknown-linux-musl/lsd" /usr/local/bin/lsd
-rm -rf "$LSD_TMP_DIR"
 
 # Descargar e instalar bat desde GitHub releases
 echo "Instalando bat..."
-if [[ "$ARCH" == "x86_64" ]]; then
-    BAT_URL="https://github.com/sharkdp/bat/releases/latest/download/bat-v0.23.0-x86_64-unknown-linux-gnu.tar.gz"
-elif [[ "$ARCH" == "i686" ]]; then
-    BAT_URL="https://github.com/sharkdp/bat/releases/latest/download/bat-v0.23.0-i686-unknown-linux-gnu.tar.gz"
-else
-    echo "Arquitectura no soportada para bat."
-    exit 1
+if [ "$OS" == "debian" ]; then
+    sudo apt update && apt install bat -y
+elif [ "$OS" == "arch" ]; then
+    pacman -S bat
 fi
-BAT_TMP_DIR=$(mktemp -d)
-wget -qO "$BAT_TMP_DIR/bat.tar.gz" "$BAT_URL"
-tar -xzf "$BAT_TMP_DIR/bat.tar.gz" -C "$BAT_TMP_DIR"
-sudo mv "$BAT_TMP_DIR/bat-v0.23.0-x86_64-unknown-linux-gnu/bat" /usr/local/bin/bat
-rm -rf "$BAT_TMP_DIR"
 
 # Instalar complementos zsh-autosuggestions y zsh-syntax-highlighting
 echo "Instalando complementos zsh-autosuggestions y zsh-syntax-highlighting..."
