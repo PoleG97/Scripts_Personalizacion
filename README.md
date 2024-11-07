@@ -5,6 +5,7 @@ Una vez clonado el repositorio, debe darse permisos para ejecutarlo `chmod +x pe
 
 Se necesita el archivo `ajustes_usuario.txt` para completar el archivo de configuración `.zshrc`. 
 
+> [!INFO]
 > Este archivo es libre de configurar con aquellas cosas que quieras incluir en tu propio `.zshrc`, yo en mi caso, es este.
 
 # Uso
