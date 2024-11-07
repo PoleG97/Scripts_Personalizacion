@@ -23,6 +23,14 @@ fi
 ARCH=$(uname -m)
 echo "Arquitectura detectada: $ARCH"
 
+# Descargar e instalar Hack Nerd Font
+echo "Instalando Hack Nerd Font..."
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+wget -qO "$DOWNLOAD_DIR/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip"
+unzip -o "$DOWNLOAD_DIR/Hack.zip" -d "$FONT_DIR"
+fc-cache -fv
+
 # Instalar ZSH
 echo "Instalando ZSH..."
 if [ "$OS" == "debian" ]; then
@@ -39,14 +47,6 @@ chsh -s $(which zsh)
 echo "Instalando tema PowerLevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
-
-# Descargar e instalar Hack Nerd Font
-echo "Instalando Hack Nerd Font..."
-FONT_DIR="$HOME/.local/share/fonts"
-mkdir -p "$FONT_DIR"
-wget -qO "$DOWNLOAD_DIR/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip"
-unzip -o "$DOWNLOAD_DIR/Hack.zip" -d "$FONT_DIR"
-fc-cache -fv
 
 # Descargar e instalar lsd
 echo "Instalando lsd..."
