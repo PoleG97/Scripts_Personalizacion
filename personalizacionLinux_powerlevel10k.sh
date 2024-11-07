@@ -23,11 +23,12 @@ fi
 ARCH=$(uname -m)
 echo "Arquitectura detectada: $ARCH"
 
+# TODO : Debería de buscar la última versión de la fuente, y no descargar una versión fijada
 # Descargar e instalar Hack Nerd Font
 echo "Instalando Hack Nerd Font..."
 FONT_DIR="$HOME/.local/share/fonts"
 mkdir -p "$FONT_DIR"
-wget -qO "$DOWNLOAD_DIR/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip"
+wget -qO "$DOWNLOAD_DIR/Hack.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
 unzip -o "$DOWNLOAD_DIR/Hack.zip" -d "$FONT_DIR"
 fc-cache -fv
 
