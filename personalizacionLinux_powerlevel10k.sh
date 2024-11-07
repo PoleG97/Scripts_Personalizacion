@@ -48,6 +48,7 @@ echo "Instalando tema PowerLevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
+# TODO : Mejorar esta mierda de la descarga e instalación de LSD y BAT, es una basura, acabaré haciéndolo a mano porque esto petará
 # Descargar e instalar lsd
 echo "Instalando lsd..."
 if [[ "$ARCH" == "x86_64" ]]; then
