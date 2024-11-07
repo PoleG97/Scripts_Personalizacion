@@ -1,34 +1,18 @@
-# My_zsh_config
+# personalizacionLinux_powerlevel10k
+Es el script más actualizado hasta ahora.
 
-Antes de nada descargar  la fuente "hack nerd font" 
+Una vez clonado el repositorio, debe darse permisos para ejecutarlo `chmod +x personalizacionLinux_powerlevel10k`
 
-Debemos tener en cuenta una serie de descargas previas
+Se necesita el archivo `ajustes_usuario.txt` para completar el archivo de configuración `.zshrc`. 
 
+> Este archivo es libre de configurar con aquellas cosas que quieras incluir en tu propio `.zshrc`, yo en mi caso, es este.
 
-A. Instalar ZSH
+# Uso
+Una vez hayas ajustado los archivos, ejecuta el script con sudo `./personalizacionLinux_powerlevel10k`. Al final del script, te notificará reiniciar la terminal para que los cambios tengan efecto.
 
-B. Cambiar Zsh                                chsh -s $(which zsh)
+> [!IMPORTANT]
+> El scrpript debe de ejecutarse **2 veces**. Esto debido a que los distintos reinicios hacer cambios distintos sobre la terminal
 
-C. Instalar OhMyZsh                           sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-
-
-(git) 1. Descargar lsd
-
-(git) 2. Descargar bat
-
-(git) 3. Descargar zsh-autosuggestion 
-
-(git) 4. Descargar zsh-syntax-highlighting
-
-(git) 5. Descargar fzf
-
-(git) 6. Descargar powerlevel10k
-
-7. Cambiar en .zshrc el Tema de ZSH por powerlevel10k/powerlevel10k
-
-NOTA :: Para cambiar el tema de OhMyPosh, añadir en el .zshrc la siguiente línea
-        eval "$(oh-my-posh init zsh --config ~/OhMyPosh_Themes/glowsticks.omp.yaml)"
-Donde irá la ruta de donde esté alojado el tema a instalar 
-
+En el primero se instala zsh, asique reinciamos, no veremos zsh, asique escribimos `zsh`, escogemos la opción 2 y listo.
+Volvemos a reiniciar y ahí ya tendrán efecto el resto de cambios, poner zsh por defecto, el ajuste de la p10k ...
 
