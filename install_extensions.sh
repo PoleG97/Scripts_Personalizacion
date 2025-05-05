@@ -1,0 +1,29 @@
+#!/bin/bash
+
+gnome-extensions install search-light@icedman.github.com
+gnome-extensions install clipboard-history@alexsaveau.dev
+gnome-extensions install openbar@neuromorph
+gnome-extensions install forge@jmmaranan.com
+gnome-extensions install appmenu-is-back@fthx
+gnome-extensions install logomenu@aryan_k
+gnome-extensions install gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com
+gnome-extensions install just-perfection-desktop@just-perfection
+gnome-extensions install hidetopbar@mathieu.bidon.ca
+gnome-extensions install notification-position@drugo.dev
+gnome-extensions install user-theme@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install ubuntu-appindicators@ubuntu.com
+gnome-extensions install ding@rastersoft.com
+gnome-extensions install ubuntu-dock@ubuntu.com
+gnome-extensions install tiling-assistant@ubuntu.com
+gnome-extensions install apps-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install auto-move-windows@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install drive-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install launch-new-instance@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install light-style@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install native-window-placement@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install places-menu@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install system-monitor@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install window-list@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install windowsNavigator@gnome-shell-extensions.gcampax.github.com
+gnome-extensions install workspace-indicator@gnome-shell-extensions.gcampax.github.com
