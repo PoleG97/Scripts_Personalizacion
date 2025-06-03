@@ -64,3 +64,14 @@ function fzf-lovely(){
 
 
 #<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>##<>#
+
+# Forzar redibujado al inicio para oh-my-posh
+if [[ -n $TMUX ]]; then
+    # Si usas tmux, fuerza resize dentro de tmux
+    tmux refresh-client -S
+else
+    # Si es terminal normal, fuerza clear y redibuja prompt
+    clear
+    zle reset-prompt 2>/dev/null || echo
+fi
+
